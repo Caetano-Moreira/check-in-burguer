@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Check-In Burger | Delivery</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <nav class="navbar">
+
+            <a href="#" class="logo">
+                <span class="logo-icon">🍔</span>
+
+                <div>
+                    <h1>CHECK-IN</h1>
+                    <span>BURGER</span>
+                </div>
+            </a>
+
+            <div class="nav-links">
+                <a href="#inicio">Início</a>
+                <a href="#cardapio">Cardápio</a>
+                <a href="#pix">Pix</a>
+                <a href="#contato">Contato</a>
+            </div>
+
+            <a
+                href="https://wa.me/5524998700947"
+                target="_blank"
+                class="btn-whatsapp"
+            >
+                Pedir agora
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <main>
+
+        <section class="hero" id="inicio">
+
+            <div class="hero-text">
+
+                <span class="tag">🍔 DELIVERY EM ANGRA DOS REIS</span>
+
+                <h2>
+                    Seu hambúrguer favorito
+                    <span>sem sair de casa.</span>
+                </h2>
+
+                <p>
+                    Hambúrgueres caprichados, ingredientes selecionados e
+                    aquele sabor que faz diferença no seu dia.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#cardapio" class="btn-primary">
+                        Ver cardápio
+                    </a>
+
+                    <a
+                        href="https://wa.me/5524998700947"
+                        target="_blank"
+                        class="btn-secondary"
+                    >
+                        WhatsApp
+                    </a>
+
+                </div>
+
+                <div class="hero-info">
+
+                    <div>
+                        <strong>📍 Localização</strong>
+                        <span>Centro de Angra dos Reis</span>
+                    </div>
+
+                    <div>
+                        <strong>🕒 Funcionamento</strong>
+                        <span>A partir das 20h</span>
+                    </div>
+
+                    <div>
+                        <strong>🛵 Delivery</strong>
+                        <span>Entrega rápida</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-image">
+
+                <div class="glow"></div>
+
+                <img src="img/burger.png" alt="Hambúrguer Check-In Burger">
+
+                <div class="price-badge">
+                    <span>A partir de</span>
+                    <strong>R$ 12</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- HORÁRIO -->
+        <section class="horario">
+
+            <div>
+                <span class="clock">🕒</span>
+
+                <div>
+                    <p>FUNCIONAMENTO</p>
+
+                    <h2>
+                        SOMENTE A PARTIR DAS
+                        <span>20H</span>
+                    </h2>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CARDÁPIO -->
+        <section class="menu-section" id="cardapio">
+
+            <div class="section-title">
+                <span>NOSSO CARDÁPIO</span>
+
+                <h2>Escolha seu favorito</h2>
+
+                <p>
+                    Feito para matar a fome de verdade.
+                </p>
+            </div>
+
+
+            <div class="menu-grid">
+
+
+                <!-- HAMBURGUER -->
+                <article class="menu-card">
+
+                    <div class="menu-image">
+                        <img src="img/hamb.png" alt="Hambúrguer">
+                    </div>
+
+                    <div class="menu-content">
+
+                        <div class="menu-name">
+                            <h3>Hambúrguer</h3>
+                            <span>R$ 12,00</span>
+                        </div>
+
+                        <p>
+                            Pão, carne bovina suculenta, queijo derretido,
+                            alface, tomate, cebola e molho especial.
+                        </p>
+
+                        <button
+                            onclick="pedirProduto('Hambúrguer', '12,00')"
+                        >
+                            Pedir no WhatsApp
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- X BURGUER -->
+                <article class="menu-card">
+
+                    <div class="menu-image burger-bg">
+                        🍔
+                    </div>
+
+                    <div class="menu-content">
+
+                        <div class="menu-name">
+                            <h3>X-Burguer</h3>
+                            <span>R$ 15,00</span>
+                        </div>
+
+                        <p>
+                            Hambúrguer artesanal com queijo derretido e
+                            acompanhamentos.
+                        </p>
+
+                        <button
+                            onclick="pedirProduto('X-Burguer', '15,00')"
+                        >
+                            Pedir no WhatsApp
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- X EGG -->
+                <article class="menu-card">
+
+                    <div class="menu-image burger-bg">
+                        🍳
+                    </div>
+
+                    <div class="menu-content">
+
+                        <div class="menu-name">
+                            <h3>X-Egg</h3>
+                            <span>R$ 16,00</span>
+                        </div>
+
+                        <p>
+                            Hambúrguer, queijo e ovo preparado na hora.
+                        </p>
+
+                        <button
+                            onclick="pedirProduto('X-Egg', '16,00')"
+                        >
+                            Pedir no WhatsApp
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CALABRESA -->
+                <article class="menu-card">
+
+                    <div class="menu-image burger-bg">
+                        🌭
+                    </div>
+
+                    <div class="menu-content">
+
+                        <div class="menu-name">
+                            <h3>X-Calabresa</h3>
+                            <span>R$ 18,00</span>
+                        </div>
+
+                        <p>
+                            Hambúrguer com calabresa, queijo e acompanhamentos.
+                        </p>
+
+                        <button
+                            onclick="pedirProduto('X-Calabresa', '18,00')"
+                        >
+                            Pedir no WhatsApp
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- BACON -->
+                <article class="menu-card">
+
+                    <div class="menu-image burger-bg">
+                        🥓
+                    </div>
+
+                    <div class="menu-content">
+
+                        <div class="menu-name">
+                            <h3>X-Bacon</h3>
+                            <span>R$ 19,00</span>
+                        </div>
+
+                        <p>
+                            Hambúrguer com queijo derretido e bacon crocante.
+                        </p>
+
+                        <button
+                            onclick="pedirProduto('X-Bacon', '19,00')"
+                        >
+                            Pedir no WhatsApp
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- X EGG BACON -->
+                <article class="menu-card destaque">
+
+                    <span class="favorite">⭐ FAVORITO</span>
+
+                    <div class="menu-image burger-bg">
+                        🍔
+                    </div>
+
+                    <div class="menu-content">
+
+                        <div class="menu-name">
+                            <h3>X-Egg Bacon</h3>
+                            <span>R$ 20,00</span>
+                        </div>
+
+                        <p>
+                            Hambúrguer, queijo, ovo e bacon.
+                        </p>
+
+                        <button
+                            onclick="pedirProduto('X-Egg Bacon', '20,00')"
+                        >
+                            Pedir no WhatsApp
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- X CALABRESA -->
+                <article class="menu-card">
+
+                    <div class="menu-image burger-bg">
+                        🔥
+                    </div>
+
+                    <div class="menu-content">
+
+                        <div class="menu-name">
+                            <h3>X-Egg Calabresa</h3>
+                            <span>R$ 20,00</span>
+                        </div>
+
+                        <p>
+                            Hambúrguer, ovo, queijo e calabresa.
+                        </p>
+
+                        <button
+                            onclick="pedirProduto('X-Egg Calabresa', '20,00')"
+                        >
+                            Pedir no WhatsApp
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- X TUDO -->
+                <article class="menu-card destaque xtudo">
+
+                    <span class="favorite">🏆 MAIS PEDIDO</span>
+
+                    <div class="menu-image">
+
+                        <img
+                            src="img/xtudo.png"
+                            alt="X-Tudo Check-In Burger"
+                        >
+
+                    </div>
+
+                    <div class="menu-content">
+
+                        <div class="menu-name">
+                            <h3>X-Tudo</h3>
+                            <span>R$ 28,00</span>
+                        </div>
+
+                        <p>
+                            Pão, duas carnes, dois ovos, calabresa, muçarela,
+                            alface, tomate, cebola, bacon e molho especial.
+                        </p>
+
+                        <button
+                            onclick="pedirProduto('X-Tudo', '28,00')"
+                        >
+                            Quero esse!
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ACOMPANHAMENTOS -->
+        <section class="extras">
+
+            <div class="section-title">
+
+                <span>COMPLETE SEU PEDIDO</span>
+
+                <h2>Acompanhamentos</h2>
+
+            </div>
+
+
+            <div class="extras-grid">
+
+                <article>
+
+                    <span class="extra-icon">🍟</span>
+
+                    <div>
+                        <h3>Batata Frita G</h3>
+                        <p>Porção grande</p>
+                    </div>
+
+                    <strong>R$ 15,00</strong>
+
+                </article>
+
+
+                <article>
+
+                    <span class="extra-icon">🍗</span>
+
+                    <div>
+                        <h3>Nuggets</h3>
+                        <p>10 unidades</p>
+                    </div>
+
+                    <strong>R$ 15,00</strong>
+
+                </article>
+
+
+                <article>
+
+                    <span class="extra-icon">🥤</span>
+
+                    <div>
+                        <h3>Guaracamp Gelado</h3>
+                        <p>Bebida gelada</p>
+                    </div>
+
+                    <strong>R$ 2,50</strong>
+
+                </article>
+
+
+                <article>
+
+                    <span class="extra-icon">🧅</span>
+
+                    <div>
+                        <h3>Toppings e molhos</h3>
+                        <p>Cebola roxa, barbecue ou molho especial</p>
+                    </div>
+
+                    <strong>R$ 2,00</strong>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- PIX -->
+        <section class="pix-section" id="pix">
+
+            <div class="pix-content">
+
+                <div>
+
+                    <span class="pix-tag">PAGAMENTO</span>
+
+                    <h2>
+                        Pague rápido pelo
+                        <span>Pix</span>
+                    </h2>
+
+                    <p>
+                        Escaneie o QR Code e faça seu pagamento de forma
+                        simples e rápida.
+                    </p>
+
+                    <div class="pix-benefits">
+
+                        <span>✓ Pagamento rápido</span>
+                        <span>✓ Fácil e seguro</span>
+                        <span>✓ Sem precisar de dinheiro</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="qr-area">
+
+                    <div class="qr-box">
+
+                        <img
+                            src="img/qrcode-pix.png"
+                            alt="QR Code Pix Check-In Burger"
+                        >
+
+                    </div>
+
+                    <strong>ESCANEIE PARA PAGAR</strong>
+
+                    <span>PIX</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+        <section class="cta" id="contato">
+
+            <div>
+
+                <span>FICOU COM FOME?</span>
+
+                <h2>Faça seu pedido agora!</h2>
+
+                <p>
+                    Atendimento pelo WhatsApp a partir das 20h.
+                </p>
+
+            </div>
+
+
+            <a
+                href="https://wa.me/5524998700947"
+                target="_blank"
+            >
+                💬 24 99870-0947
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+
+            🍔
+
+            <div>
+                <strong>CHECK-IN</strong>
+                <span>BURGER</span>
+            </div>
+
+        </div>
+
+
+        <p>
+            Mais que um lanche, é um check no seu dia.
+        </p>
+
+
+        <span>
+            Angra dos Reis • Delivery a partir das 20h
+        </span>
+
+    </footer>
+
+
+    <!-- BOTÃO FLUTUANTE -->
+    <a
+        href="https://wa.me/5524998700947"
+        target="_blank"
+        class="whatsapp-float"
+        title="Pedir pelo WhatsApp"
+    >
+        ☎
+    </a>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
