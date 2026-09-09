@@ -32,14 +32,9 @@
                 <a href="#pix">Pix</a>
                 <a href="#contato">Contato</a>
             </div>
-
-            <a
-                href="https://wa.me/5524998700947"
-                target="_blank"
-                class="btn-whatsapp"
-            >
-                Pedir agora
-            </a>
+            <button class="btn-carrinho" type="button" onclick="abrirCarrinho()" aria-label="Abrir carrinho">
+                🛒 Pedido <span id="cart-count">0</span>
+            </button>
 
         </nav>
 
@@ -90,7 +85,7 @@
 
                     <div>
                         <strong>🕒 Funcionamento</strong>
-                        <span>24 horas por dia</span>
+                        <span>A partir das 20h</span>
                     </div>
 
                     <div>
@@ -110,7 +105,7 @@
                 <img src="img/burger.png" alt="Hambúrguer Check-In Burger">
 
                 <div class="price-badge">
-                    <span> 24 hrs</span>
+                    <span>A partir das 20h</span>
                     <strong>R$ 12</strong>
                 </div>
 
@@ -130,7 +125,7 @@
 
                     <h2>
                         
-                        <span>24 Horas</span>
+                        <span>A partir das 20h</span>
                     </h2>
                 </div>
 
@@ -174,10 +169,8 @@
                             Pão, carne, alface, tomate, ketchup e maionese, batata palha.
                         </p>
 
-                        <button
-                            onclick="pedirProduto('Hambúrguer', '12,00')"
-                        >
-                            Pedir no WhatsApp
+                        <button onclick="adicionarAoCarrinho('Hambúrguer', 12.00)">
+                            🛒 Adicionar ao pedido
                         </button>
 
                     </div>
@@ -203,10 +196,8 @@
                             Pão, carne, alface, tomate, queijo derretido, ketchup, maionese e batata palha.
                         </p>
 
-                        <button
-                            onclick="pedirProduto('X-Burguer', '15,00')"
-                        >
-                            Pedir no WhatsApp
+                        <button onclick="adicionarAoCarrinho('X-Burguer', 15.00)">
+                            🛒 Adicionar ao pedido
                         </button>
 
                     </div>
@@ -232,10 +223,8 @@
                             Pão, carne, ovo, queijo, presunto, alface, tomate, ketchup, maionese e batata palha.
                         </p>
 
-                        <button
-                            onclick="pedirProduto('X-Egg', '16,00')"
-                        >
-                            Pedir no WhatsApp
+                        <button onclick="adicionarAoCarrinho('X-Egg', 16.00)">
+                            🛒 Adicionar ao pedido
                         </button>
 
                     </div>
@@ -261,10 +250,8 @@
                             Pão, carne, alface, tomate, calabresa, queijo, presunto ketchup, maionese e batata palha.
                         </p>
 
-                        <button
-                            onclick="pedirProduto('X-Calabresa', '18,00')"
-                        >
-                            Pedir no WhatsApp
+                        <button onclick="adicionarAoCarrinho('X-Calabresa', 18.00)">
+                            🛒 Adicionar ao pedido
                         </button>
 
                     </div>
@@ -290,10 +277,8 @@
                             Pão, carne, presunto, queijo, bacon, alface, tomate, ketchup, maionese e batata palha.
                         </p>
 
-                        <button
-                            onclick="pedirProduto('X-Bacon', '19,00')"
-                        >
-                            Pedir no WhatsApp
+                        <button onclick="adicionarAoCarrinho('X-Bacon', 19.00)">
+                            🛒 Adicionar ao pedido
                         </button>
 
                     </div>
@@ -321,10 +306,8 @@
                             Pão, carne, queijo, presunto, ovo, bacon, alface, tomate, ketchup, maionese e batata palha.
                         </p>
 
-                        <button
-                            onclick="pedirProduto('X-Egg Bacon', '20,00')"
-                        >
-                            Pedir no WhatsApp
+                        <button onclick="adicionarAoCarrinho('X-Egg Bacon', 20.00)">
+                            🛒 Adicionar ao pedido
                         </button>
 
                     </div>
@@ -350,10 +333,8 @@
                             Pão, carne, ovo, queijo, presunto, calabresa, alface, tomate, ketchup, maionese e batata palha.
                         </p>
 
-                        <button
-                            onclick="pedirProduto('X-Egg Calabresa', '20,00')"
-                        >
-                            Pedir no WhatsApp
+                        <button onclick="adicionarAoCarrinho('X-Egg Calabresa', 20.00)">
+                            🛒 Adicionar ao pedido
                         </button>
 
                     </div>
@@ -387,10 +368,8 @@
                             alface, tomate, bacon, ketchup e maionese e batata palha
                         </p>
 
-                        <button
-                            onclick="pedirProduto('X-Tudo', '28,00')"
-                        >
-                            Quero esse!
+                        <button onclick="adicionarAoCarrinho('X-Tudo', 28.00)">
+                            🛒 Adicionar ao pedido
                         </button>
 
                     </div>
@@ -406,69 +385,70 @@
         <section class="extras">
 
             <div class="section-title">
-
                 <span>COMPLETE SEU PEDIDO</span>
-
                 <h2>Acompanhamentos</h2>
-
             </div>
-
 
             <div class="extras-grid">
 
-                <article>
-
+                <article class="extra-order-card">
                     <span class="extra-icon">🍟</span>
-
                     <div>
                         <h3>Batata Frita</h3>
                         <p>Porção média</p>
                     </div>
-
                     <strong>R$ 15,00</strong>
-
+                    <button type="button" onclick="adicionarAoCarrinho('Batata Frita', 15.00)">+ Adicionar</button>
                 </article>
 
-
-                <article>
-
+                <article class="extra-order-card">
                     <span class="extra-icon">🍗</span>
-
                     <div>
                         <h3>Nuggets</h3>
                         <p>10 unidades</p>
                     </div>
-
                     <strong>R$ 15,00</strong>
-
+                    <button type="button" onclick="adicionarAoCarrinho('Nuggets - 10 unidades', 15.00)">+ Adicionar</button>
                 </article>
 
-
-                <article>
-
+                <article class="extra-order-card">
                     <span class="extra-icon">🥤</span>
-
                     <div>
                         <h3>Guaracamp Gelado</h3>
                         <p>Bebida gelada</p>
                     </div>
-
                     <strong>R$ 2,50</strong>
-
+                    <button type="button" onclick="adicionarAoCarrinho('Guaracamp Gelado', 2.50)">+ Adicionar</button>
                 </article>
 
-
-                <article>
-
+                <article class="extra-order-card">
                     <span class="extra-icon">🧅</span>
-
                     <div>
-                        <h3>Toppings e molhos</h3>
-                        <p>Cebola roxa, barbecue ou mostarda</p>
+                        <h3>Cebola roxa</h3>
+                        <p>Topping extra</p>
                     </div>
-
                     <strong>R$ 2,00</strong>
+                    <button type="button" onclick="adicionarAoCarrinho('Cebola roxa', 2.00)">+ Adicionar</button>
+                </article>
 
+                <article class="extra-order-card">
+                    <span class="extra-icon">🥫</span>
+                    <div>
+                        <h3>Barbecue</h3>
+                        <p>Molho extra</p>
+                    </div>
+                    <strong>R$ 2,00</strong>
+                    <button type="button" onclick="adicionarAoCarrinho('Barbecue', 2.00)">+ Adicionar</button>
+                </article>
+
+                <article class="extra-order-card">
+                    <span class="extra-icon">🌭</span>
+                    <div>
+                        <h3>Mostarda</h3>
+                        <p>Molho extra</p>
+                    </div>
+                    <strong>R$ 2,00</strong>
+                    <button type="button" onclick="adicionarAoCarrinho('Mostarda', 2.00)">+ Adicionar</button>
                 </article>
 
             </div>
@@ -538,7 +518,7 @@
                 <h2>Faça seu pedido agora!</h2>
 
                 <p>
-                    Atendimento pelo WhatsApp 24hrs
+                    Atendimento pelo WhatsApp a partir das 20h
                 </p>
 
             </div>
@@ -582,19 +562,76 @@
 
     </footer>
 
-
-    <!-- BOTÃO FLUTUANTE -->
-    <a
-        href="https://wa.me/5524998700947"
-        target="_blank"
-        class="whatsapp-float"
-        title="Pedir pelo WhatsApp"
-    >
-        ☎
-    </a>
+    <!-- BOTÃO FLUTUANTE DO CARRINHO -->
+    <button class="cart-float" type="button" onclick="abrirCarrinho()" title="Abrir pedido">
+        🛒 <span id="cart-count-float">0</span>
+    </button>
 
 
-    <script src="script.js"></script>
+
+
+    <!-- CARRINHO -->
+    <div class="cart-overlay" id="cart-overlay" onclick="fecharCarrinho()"></div>
+
+    <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+        <div class="cart-header">
+            <div>
+                <span>SEU PEDIDO</span>
+                <h2>🛒 Carrinho</h2>
+            </div>
+            <button type="button" class="cart-close" onclick="fecharCarrinho()" aria-label="Fechar carrinho">×</button>
+        </div>
+
+        <div id="cart-empty" class="cart-empty">
+            <span>🍔</span>
+            <p>Seu carrinho ainda está vazio.</p>
+            <button type="button" onclick="fecharCarrinho(); document.querySelector('#cardapio').scrollIntoView()">Ver cardápio</button>
+        </div>
+
+        <div id="cart-items" class="cart-items"></div>
+
+        <div id="cart-checkout" class="cart-checkout">
+            <div class="cart-total">
+                <span>Total do pedido</span>
+                <strong id="cart-total">R$ 0,00</strong>
+            </div>
+
+            <div class="checkout-fields">
+                <label>Seu nome<input id="cliente-nome" type="text" placeholder="Ex.: Caetano" autocomplete="name"></label>
+
+                <fieldset>
+                    <legend>Como vai receber?</legend>
+                    <div class="option-row">
+                        <label><input type="radio" name="entrega" value="Delivery" checked onchange="alternarEndereco()"> Delivery</label>
+                        <label><input type="radio" name="entrega" value="Retirada" onchange="alternarEndereco()"> Retirada</label>
+                    </div>
+                </fieldset>
+
+                <div id="delivery-fields">
+                    <label>Endereço<input id="cliente-endereco" type="text" placeholder="Rua, número..." autocomplete="street-address"></label>
+                    <label>Bairro<input id="cliente-bairro" type="text" placeholder="Seu bairro"></label>
+                    <label>Referência<input id="cliente-referencia" type="text" placeholder="Opcional"></label>
+                </div>
+
+                <label>Forma de pagamento
+                    <select id="pagamento" onchange="alternarTroco()">
+                        <option value="Pix">Pix</option>
+                        <option value="Dinheiro">Dinheiro</option>
+                        <option value="Cartão">Cartão</option>
+                    </select>
+                </label>
+
+                <label id="troco-field" class="hidden">Troco para quanto?<input id="troco" type="number" min="0" step="0.01" placeholder="Ex.: 50"></label>
+                <label>Observações<textarea id="observacoes" rows="3" placeholder="Ex.: sem tomate, molho separado..."></textarea></label>
+            </div>
+
+            <p class="checkout-note">A taxa de entrega, quando houver, é confirmada pelo WhatsApp.</p>
+            <button class="checkout-button" type="button" onclick="finalizarPedido()">💬 Finalizar no WhatsApp</button>
+        </div>
+    </aside>
+
+
+    <script src="app.js"></script>
 
 </body>
 
