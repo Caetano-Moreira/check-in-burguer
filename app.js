@@ -1,4 +1,5 @@
 const numeroWhatsApp = "5524998700947";
+const TAXA_ENTREGA = 10;
 const carrinho = JSON.parse(localStorage.getItem("checkin-carrinho")) || [];
 
 function formatarPreco(valor) {
@@ -37,7 +38,10 @@ function atualizarCarrinho() {
     if (!itensArea) return;
 
     const quantidadeTotal = carrinho.reduce((s, item) => s + item.quantidade, 0);
-    const total = carrinho.reduce((s, item) => s + item.preco * item.quantidade, 0);
+    const subtotal = carrinho.reduce((s, item) => s + item.preco * item.quantidade, 0);
+    const tipoEntrega = document.querySelector('input[name="entrega"]:checked')?.value || "Delivery";
+    const taxaEntrega = tipoEntrega === "Delivery" ? TAXA_ENTREGA : 0;
+    const total = subtotal + taxaEntrega;
 
     document.getElementById("cart-count").textContent = quantidadeTotal;
     document.getElementById("cart-count-float").textContent = quantidadeTotal;
@@ -91,6 +95,7 @@ function fecharCarrinho() {
 function alternarEndereco() {
     const tipo = document.querySelector('input[name="entrega"]:checked')?.value;
     document.getElementById("delivery-fields").classList.toggle("hidden", tipo === "Retirada");
+    atualizarCarrinho();
 }
 
 function alternarTroco() {
@@ -134,14 +139,17 @@ function finalizarPedido() {
         return (!endereco ? document.getElementById("cliente-endereco") : document.getElementById("cliente-bairro")).focus();
     }
 
-    const total = carrinho.reduce((s, item) => s + item.preco * item.quantidade, 0);
+    const subtotal = carrinho.reduce((s, item) => s + item.preco * item.quantidade, 0);
+    const taxaEntrega = tipoEntrega === "Delivery" ? TAXA_ENTREGA : 0;
+    const total = subtotal + taxaEntrega;
     const linhas = carrinho.map(item => `• ${item.quantidade}x ${item.nome} — ${formatarPreco(item.preco * item.quantidade)}`).join("\n");
 
     let mensagem = `🍔 *NOVO PEDIDO - CHECK-IN BURGER*\n\n`;
     mensagem += `👤 *Cliente:* ${nome}\n\n`;
     mensagem += `🛒 *PEDIDO*\n${linhas}\n\n`;
-    mensagem += `💰 *TOTAL DOS ITENS:* ${formatarPreco(total)}\n`;
-    mensagem += `_Taxa de entrega, se houver, será confirmada no atendimento._\n\n`;
+    mensagem += `💵 *Subtotal:* ${formatarPreco(subtotal)}\n`;
+    if (tipoEntrega === "Delivery") mensagem += `🛵 *Taxa de entrega:* ${formatarPreco(taxaEntrega)}\n`;
+    mensagem += `💰 *TOTAL:* ${formatarPreco(total)}\n\n`;
     mensagem += `🛵 *Recebimento:* ${tipoEntrega}\n`;
 
     if (tipoEntrega === "Delivery") {
